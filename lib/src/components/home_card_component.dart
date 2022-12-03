@@ -39,7 +39,7 @@ class HomeCardComponent extends StatelessWidget {
                       ),
                     ),
                     CustomTextWidget(
-                      data: '${weather.weatherList![0].weather[0]['main']}',
+                      data: weather.country,
                       fontSize: 14,
                       color: Colors.grey,
                     ),
