@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app/src/pages/home_page.dart';
 import 'package:weather_app/src/pages/splash_page.dart';
 
 class AppWidget extends StatelessWidget {
@@ -18,6 +19,7 @@ class AppWidget extends StatelessWidget {
       initialRoute: '/splash',
       routes: {
         '/splash': (context) => const SplashPage(),
+        '/home': (context) => const HomePage(),
       },
     );
   }

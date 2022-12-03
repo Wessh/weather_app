@@ -10,6 +10,10 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
+    Future.delayed(const Duration(seconds: 2)).then(
+      (value) =>
+          Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false),
+    );
     super.initState();
   }
 
