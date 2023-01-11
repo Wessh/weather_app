@@ -26,6 +26,15 @@ class HomeCardComponent extends StatelessWidget {
                   'http://openweathermap.org/img/wn/${weather.weatherList![0].weather[0]['icon']}@2x.png',
                   filterQuality: FilterQuality.medium,
                   fit: BoxFit.cover,
+                  loadingBuilder: (_, child, loading) {
+                    if (loading == null) {
+                      return child;
+                    }
+                    return const Center(
+                        child: CircularProgressIndicator(
+                      color: Colors.white,
+                    ));
+                  },
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -65,12 +74,12 @@ class HomeCardComponent extends StatelessWidget {
             Row(
               children: [
                 CustomTextWidget(
-                    data: ' Min: ${weather.weatherList![0].tempMin}'),
+                    data: ' Min: ${weather.weatherList![0].tempMin.ceil()}º'),
                 const SizedBox(
                   width: 8,
                 ),
                 CustomTextWidget(
-                    data: 'Max ${weather.weatherList![0].tempMax}'),
+                    data: 'Max ${weather.weatherList![0].tempMax.ceil()}º'),
               ],
             ),
           ],
